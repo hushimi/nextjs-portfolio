@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './navbar.module.css'
 
 function Navbar() {
@@ -16,11 +16,39 @@ function Navbar() {
     const handleClick = () => {
         setListOn(!listOn)
         if (listOn) {
+            // fadeout
             setfadeOutOn(true)
+            listRef.current.style.pointerEvents = 'none'
         } else {
+            // fadein
             setfadeOutOn(false)
+            listRef.current.style.pointerEvents = 'auto'
         }
     }
+
+    /**
+     * ----------------------------------------------------
+     * Close menu when click outside of list
+     * ----------------------------------------------------
+     */
+    useEffect(() => {
+        const ul = listRef.current
+        if (!ul) return
+
+        const handleClickOutside = (e: MouseEvent) => {
+            if (ul?.contains(e.target as Node)) {
+                // when click inside of element(fadeout)
+                setListOn(false)
+                setfadeOutOn(true)
+                listRef.current.style.pointerEvents = 'none'
+            }
+        }
+
+        document.addEventListener('click', handleClickOutside)
+        return () => {
+            document.removeEventListener('click', handleClickOutside)
+        }
+    }, [listRef])
 
     return (
         <>
