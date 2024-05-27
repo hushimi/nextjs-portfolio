@@ -32,12 +32,8 @@ function Navbar() {
      * ----------------------------------------------------
      */
     useEffect(() => {
-        const ul = listRef.current
-        if (!ul) return
-
         const handleClickOutside = (e: MouseEvent) => {
-            if (ul?.contains(e.target as Node)) {
-                // when click inside of element(fadeout)
+            if (listOn) {
                 setListOn(false)
                 setfadeOutOn(true)
                 listRef.current.style.pointerEvents = 'none'
@@ -48,7 +44,7 @@ function Navbar() {
         return () => {
             document.removeEventListener('click', handleClickOutside)
         }
-    }, [listRef])
+    }, [listOn])
 
     return (
         <>
