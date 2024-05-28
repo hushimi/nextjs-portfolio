@@ -1,12 +1,14 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './navbar.module.css'
+import { useWindowSize } from '@/hooks/useWindowSize'
 
 function Navbar() {
     const hamburgerRef = useRef<HTMLAnchorElement>(null!)
     const listRef = useRef<HTMLUListElement>(null!)
     const [listOn, setListOn] = useState(false)
     const [fadeOutOn, setfadeOutOn] = useState(false)
+    const { windowWidth } = useWindowSize()
 
     /**
      * ----------------------------------------------------
@@ -45,6 +47,18 @@ function Navbar() {
             document.removeEventListener('click', handleClickOutside)
         }
     }, [listOn])
+
+    /**
+     * ----------------------------------------------------
+     * Remove fade in, fade-out class
+     * ----------------------------------------------------
+     */
+    useEffect(() => {
+        if (windowWidth > 912) {
+            setListOn(false)
+            setfadeOutOn(false)
+        }
+    }, [windowWidth])
 
     return (
         <>
