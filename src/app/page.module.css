@@ -1,0 +1,11 @@
+.top {
+    min-height: calc(100vh - 50px);
+    position: relative;
+}
+.top__img {
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 20%;
+}

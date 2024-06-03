@@ -1,18 +1,18 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Navbar from '@/components/Navbar/Navbar'
-import { Sawarabi_Gothic } from 'next/font/google'
-
-const SawarabiGothic = Sawarabi_Gothic({
-    weight: ['400'],
-    preload: false,
-})
+import HandWriting from '@/components/Icons/name_writing.svg'
 
 export default function Home() {
     return (
         <>
-            <main className={SawarabiGothic.className}>
+            <main>
                 <Navbar />
+                <section className={styles.top}>
+                    <div className={styles.top__img}>
+                        <HandWriting />
+                    </div>
+                </section>
             </main>
         </>
     )

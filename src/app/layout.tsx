@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Sawarabi_Gothic } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const SawarabiGothic = Sawarabi_Gothic({
+    weight: ['400'],
+    preload: false,
+})
 
 export const metadata: Metadata = {
     title: '0xf3 portfolio',
@@ -16,7 +19,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ja">
-            <body className={inter.className}>{children}</body>
+            <body className={SawarabiGothic.className}>{children}</body>
         </html>
     )
 }
