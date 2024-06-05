@@ -9,3 +9,12 @@
     transform: translate(-50%, 0);
     top: 20%;
 }
+/* slider */
+.top__slider {
+    width: 75%;
+    height: 180px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 10%;
+}
