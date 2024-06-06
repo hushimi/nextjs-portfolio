@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styles from './page.module.css'
 import Navbar from '@/components/Navbar/Navbar'
 import HandWriting from '@/components/Icons/name_writing.svg'
@@ -6,8 +5,7 @@ import EmblaCarousel from '@/components/Carousel/EmblaCarousel'
 import { EmblaOptionsType } from 'embla-carousel'
 
 const OPTIONS: EmblaOptionsType = { loop: true }
-const SLIDE_COUNT = 8
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+let IMGS: string[] = ['/work1.png', '/work2.png', '/work3.png', '/work2.png']
 
 export default function Home() {
     return (
@@ -21,7 +19,7 @@ export default function Home() {
                         <HandWriting />
                     </div>
                     <div className={styles.top__slider}>
-                        <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+                        <EmblaCarousel images={IMGS} options={OPTIONS} />
                     </div>
                 </section>
             </main>
