@@ -1,7 +1,6 @@
 .embla {
     max-width: 48rem;
     margin: auto;
-    color: #7c8686;
     --slide-height: 150px;
     --slide-spacing: 1rem;
     --slide-size: 45%;
@@ -21,8 +20,7 @@
     padding-left: var(--slide-spacing);
     max-width: 30%;
     border-radius: 4px;
-    border: 1px solid #7c8686;
-    background-color: #7c8686;
+    border: 2px solid #7c8686;
     margin: 0 9px;
     position: relative;
 }
@@ -32,4 +30,15 @@
     height: 90% !important;
     width: auto !important;
     max-width: 90%;
+}
+
+/* ------------------
+Responsive
+---------------------*/
+@media only screen and (max-width: 912px) {
+    .embla {
+        --slide-height: 120px;
+        --slide-spacing: 1rem;
+        --slide-size: 70%;
+    }
 }

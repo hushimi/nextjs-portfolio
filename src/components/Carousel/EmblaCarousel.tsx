@@ -14,7 +14,7 @@ type PropType = {
 export default function EmblaCarousel(props: PropType) {
     const { images, options } = props
     const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-        AutoScroll({ playOnInit: true, speed: 1 }),
+        AutoScroll({ playOnInit: true, speed: 1, stopOnInteraction: false }),
     ])
 
     return (
@@ -27,8 +27,10 @@ export default function EmblaCarousel(props: PropType) {
                                 <Image
                                     src={image}
                                     alt="my works"
-                                    fill
                                     className={styles.embla__slide__img}
+                                    sizes="(max-width: 912px) 30vw, 50vw"
+                                    priority={true}
+                                    fill
                                 />
                             </div>
                         ))}
