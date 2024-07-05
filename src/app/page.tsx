@@ -18,13 +18,7 @@ import Contact from '@/components/Contact/Contact'
 
 // EmbraCarousel
 const OPTIONS: EmblaOptionsType = { loop: true }
-const IMGS: string[] = [
-    '/work1.png',
-    '/work2.png',
-    '/work3.png',
-    '/work2.png',
-    '/work4.png',
-]
+const IMGS: string[] = ['/work1.png', '/work2.png', '/work3.png', '/work4.png']
 
 export default function Home() {
     // works cardの読み込み
