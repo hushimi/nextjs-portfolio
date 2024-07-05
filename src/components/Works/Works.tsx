@@ -6,9 +6,9 @@ import styles from './works.module.css'
 import type { worksCard } from '@/types/works_card'
 
 // React-icons
-import { FaLaravel, FaVuejs } from 'react-icons/fa6'
-import { RiFlutterFill } from 'react-icons/ri'
-import { SiPostgresql } from 'react-icons/si'
+import { FaLaravel, FaVuejs, FaDocker } from 'react-icons/fa6'
+import { RiFlutterFill, RiNextjsFill } from 'react-icons/ri'
+import { SiPostgresql, SiVercel, SiTypescript } from 'react-icons/si'
 import {
     DiHtml5,
     DiCss3,
@@ -16,24 +16,26 @@ import {
     DiWordpress,
     DiPhp,
     DiJqueryLogo,
-    DiDocker,
 } from 'react-icons/di'
 
 type IconsType = {
     [K in string]: any
 }
 const icons: IconsType = {
-    DiHtml5: <DiHtml5 />,
-    DiCss3: <DiCss3 />,
-    DiJavascript1: <DiJavascript1 />,
-    DiWordpress: <DiWordpress />,
-    DiPhp: <DiPhp />,
-    DiJqueryLogo: <DiJqueryLogo />,
-    DiDocker: <DiDocker />,
-    FaLaravel: <FaLaravel />,
-    FaVuejs: <FaVuejs />,
-    RiFlutterFill: <RiFlutterFill />,
-    SiPostgresql: <SiPostgresql />,
+    HTML5: <DiHtml5 />,
+    CSS3: <DiCss3 />,
+    JavaScript: <DiJavascript1 />,
+    TypeScript: <SiTypescript />,
+    JQuery: <DiJqueryLogo />,
+    Vuejs: <FaVuejs />,
+    Nextjs: <RiNextjsFill />,
+    PHP: <DiPhp />,
+    Laravel: <FaLaravel />,
+    Flutter: <RiFlutterFill />,
+    WordPress: <DiWordpress />,
+    Vercel: <SiVercel />,
+    Docker: <FaDocker />,
+    Postgresql: <SiPostgresql />,
 }
 
 export default function Works({ worksCards }: { worksCards: worksCard[] }) {

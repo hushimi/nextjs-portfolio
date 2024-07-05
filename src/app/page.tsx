@@ -1,15 +1,19 @@
 'use client'
-import type { worksCard } from '@/types/works_card'
 import { useEffect, useState } from 'react'
-import { getWorkList } from '@/libs/client'
 import styles from './page.module.css'
 import { EmblaOptionsType } from 'embla-carousel'
+
+// API
+import { getWorkList, getAboutMe } from '@/libs/client'
+import type { worksCard } from '@/types/works_card'
+import type { aboutMe } from '@/types/about_me'
 
 // Components
 import Navbar from '@/components/Navbar/Navbar'
 import HandWriting from '@/components/Icons/name_writing.svg'
 import EmblaCarousel from '@/components/Carousel/EmblaCarousel'
 import Works from '@/components/Works/Works'
+import About from '@/components/About/About'
 import Contact from '@/components/Contact/Contact'
 
 // EmbraCarousel
@@ -19,9 +23,15 @@ const IMGS: string[] = ['/work1.png', '/work2.png', '/work3.png', '/work2.png']
 export default function Home() {
     // works cardの読み込み
     const [worksCards, setWorksCard] = useState<worksCard[]>([])
+    const [aboutMe, setAboutMe] = useState<aboutMe[]>([])
+
     useEffect(() => {
         getWorkList().then((worksCards: worksCard[]) => {
             setWorksCard(worksCards)
+        })
+
+        getAboutMe().then((aboutMe: aboutMe[]) => {
+            setAboutMe(aboutMe)
         })
     }, [])
 
@@ -52,6 +62,7 @@ export default function Home() {
                     <h1 className={styles.section__title} id="about_sec">
                         About
                     </h1>
+                    {aboutMe && <About aboutMe={aboutMe} />}
                 </section>
 
                 {/* Contact section */}

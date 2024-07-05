@@ -1,5 +1,6 @@
 import { createClient } from 'microcms-js-sdk'
 import type { worksCard } from '@/types/works_card'
+import type { aboutMe } from '@/types/about_me'
 
 export const client = createClient({
     serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN || '',
@@ -9,5 +10,11 @@ export const client = createClient({
 export async function getWorkList(): Promise<worksCard[]> {
     const data = await client.get({ endpoint: 'works_card' })
 
-    return data.contents;
+    return data.contents
+}
+
+export async function getAboutMe(): Promise<aboutMe[]> {
+    const data = await client.get({ endpoint: 'about_me' })
+
+    return data.contents
 }
