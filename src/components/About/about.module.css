@@ -76,7 +76,8 @@
         border-bottom: 2px solid #555d5d;
     }
     .about__me__img img {
-        max-width: 80%;
+        width: 80%;
+        height: auto;
     }
 
 
