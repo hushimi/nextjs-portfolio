@@ -2,17 +2,19 @@
 import type { worksCard } from '@/types/works_card'
 import { useEffect, useState } from 'react'
 import { getWorkList } from '@/libs/client'
-
 import styles from './page.module.css'
+import { EmblaOptionsType } from 'embla-carousel'
+
+// Components
 import Navbar from '@/components/Navbar/Navbar'
 import HandWriting from '@/components/Icons/name_writing.svg'
 import EmblaCarousel from '@/components/Carousel/EmblaCarousel'
-import { EmblaOptionsType } from 'embla-carousel'
 import Works from '@/components/Works/Works'
+import Contact from '@/components/Contact/Contact'
 
 // EmbraCarousel
 const OPTIONS: EmblaOptionsType = { loop: true }
-let IMGS: string[] = ['/work1.png', '/work2.png', '/work3.png', '/work2.png']
+const IMGS: string[] = ['/work1.png', '/work2.png', '/work3.png', '/work2.png']
 
 export default function Home() {
     // works cardの読み込み
@@ -57,7 +59,13 @@ export default function Home() {
                     <h1 className={styles.section__title} id="contact_sec">
                         Contact
                     </h1>
+                    <Contact />
                 </section>
+
+                {/* footer */}
+                <footer className={styles.footer}>
+                    <h2>&copy;Kosuke Fushimi</h2>
+                </footer>
             </main>
         </>
     )

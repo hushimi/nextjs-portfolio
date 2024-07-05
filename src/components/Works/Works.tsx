@@ -1,8 +1,14 @@
 'use client'
 import React from 'react'
-import styles from './works.module.css'
 import Image from 'next/image'
+
+import styles from './works.module.css'
 import type { worksCard } from '@/types/works_card'
+
+// React-icons
+import { FaLaravel, FaVuejs } from 'react-icons/fa6'
+import { RiFlutterFill } from 'react-icons/ri'
+import { SiPostgresql } from 'react-icons/si'
 import {
     DiHtml5,
     DiCss3,
@@ -12,9 +18,6 @@ import {
     DiJqueryLogo,
     DiDocker,
 } from 'react-icons/di'
-import { FaLaravel, FaVuejs } from 'react-icons/fa6'
-import { RiFlutterFill } from 'react-icons/ri'
-import { SiPostgresql } from 'react-icons/si'
 
 type IconsType = {
     [K in string]: any
